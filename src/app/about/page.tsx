@@ -34,6 +34,12 @@ const team = [
     bio: "Infusing fresh perspectives and visual excellence into the PrimeStack ecosystem.",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=2340",
   },
+  {
+    name: "Sidiq Olasode",
+    role: "Assistant Technical Lead",
+    bio: "Supporting the technical vision and ensuring high standards in execution and system architecture.",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=1974",
+  },
 ];
 
 export default function AboutPage() {
