@@ -48,28 +48,22 @@ export function TrustHighlights() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.8 }}
               viewport={{ once: true }}
-              className={`group relative p-10 rounded-[2.5rem] overflow-hidden glass border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-all duration-500 ${item.className}`}
+              className={`group relative p-10 rounded-3xl border border-white/[0.05] hover:border-white/10 transition-all duration-500 ${item.className}`}
             >
               <div className="relative z-10 h-full flex flex-col justify-between space-y-8">
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                <div className="w-12 h-12 rounded-xl border border-white/10 flex items-center justify-center text-white/60 group-hover:text-white transition-all duration-500">
                   {item.icon}
                 </div>
                 
                 <div className="space-y-3">
-                  <h3 className="font-clash text-2xl font-bold text-white group-hover:text-primary transition-colors">
+                  <h3 className="font-clash text-2xl font-bold text-white transition-colors">
                     {item.title}
                   </h3>
-                  <p className="font-general text-sm text-muted-foreground leading-relaxed">
+                  <p className="font-general text-sm text-white/40 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
               </div>
-
-              {/* Decorative accent */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-              
-              {/* Subtle grid pattern for texture */}
-              <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')]" />
             </motion.div>
           ))}
         </div>

@@ -116,10 +116,10 @@
   .font-dm-sans { font-family: var(--font-dm-sans); }
 
   .glass {
-    @apply backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20;
+    @apply bg-black/40 border border-white/10;
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400;
+    @apply text-white;
   }
 }

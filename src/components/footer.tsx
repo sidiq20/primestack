@@ -21,16 +21,16 @@ export function Footer() {
             Crafting high-impact digital experiences for modern brands. We combine design excellence with technical precision to build legacies.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="#" className="text-gray-400 hover:text-primary transition-colors">
+            <Link href="#" className="text-white/20 hover:text-white transition-colors">
               <Instagram className="w-5 h-5" />
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-primary transition-colors">
+            <Link href="#" className="text-white/20 hover:text-white transition-colors">
               <Twitter className="w-5 h-5" />
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-primary transition-colors">
+            <Link href="#" className="text-white/20 hover:text-white transition-colors">
               <Linkedin className="w-5 h-5" />
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-primary transition-colors">
+            <Link href="#" className="text-white/20 hover:text-white transition-colors">
               <Github className="w-5 h-5" />
             </Link>
           </div>

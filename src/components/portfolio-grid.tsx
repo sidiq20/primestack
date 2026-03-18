@@ -45,13 +45,13 @@ export function PortfolioGrid() {
         <div className="flex flex-col md:flex-row items-end justify-between mb-24 gap-8">
           <div className="space-y-6">
             <h2 className="font-clash text-4xl md:text-7xl font-bold tracking-tight text-white leading-[0.9]">
-              Selected <span className="italic font-fraunces text-gradient">Works</span>
+              Selected Works
             </h2>
-            <p className="font-general text-lg md:text-xl text-muted-foreground max-w-xl">
+            <p className="font-general text-lg md:text-xl text-white/50 max-w-xl">
               A curated collection of digital experiences built on collaboration, design, and peak technology.
             </p>
           </div>
-          <Link href="/portfolio" className="font-satoshi font-black text-sm uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors border-b border-white/10 pb-2">
+          <Link href="/portfolio" className="font-satoshi font-black text-sm uppercase tracking-[0.2em] text-white/20 hover:text-white transition-colors border-b border-white/10 pb-2">
             View Archive
           </Link>
         </div>
@@ -60,32 +60,32 @@ export function PortfolioGrid() {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
-              className={`group relative rounded-[2.5rem] overflow-hidden glass border-white/5 cursor-pointer ${project.className}`}
+              className={`group relative rounded-3xl overflow-hidden border border-white/5 cursor-pointer ${project.className}`}
             >
               <div className="relative aspect-[16/10] md:aspect-auto md:h-full overflow-hidden min-h-[400px]">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                  className="object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-700" />
+                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-all duration-700" />
                 
-                <div className="absolute inset-x-0 bottom-0 p-10 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
+                <div className="absolute inset-x-0 bottom-0 p-10 translate-y-2 group-hover:translate-y-0 transition-all duration-500 opacity-0 group-hover:opacity-100">
                   <div className="flex items-end justify-between">
                     <div className="space-y-2">
-                      <p className="font-clash text-xs font-bold uppercase tracking-widest text-primary">
+                      <p className="font-clash text-[10px] font-bold uppercase tracking-widest text-white/40">
                         {project.category}
                       </p>
                       <h3 className="font-satoshi text-3xl font-bold text-white">
                         {project.title}
                       </h3>
                     </div>
-                    <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center backdrop-blur-md">
+                    <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center">
                       <ArrowUpRight className="w-6 h-6 text-white" />
                     </div>
                   </div>

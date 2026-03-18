@@ -54,14 +54,14 @@ export function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="font-general text-sm font-medium hover:text-primary transition-colors"
+              className="font-general text-sm font-medium text-white/40 hover:text-white transition-colors"
             >
               {link.name}
             </Link>
           ))}
           <Link 
             href="/contact" 
-            className={cn(buttonVariants({ variant: "default" }), "font-satoshi font-bold rounded-xl h-10 px-6")}
+            className={cn(buttonVariants({ variant: "outline" }), "font-satoshi font-bold rounded-xl h-10 px-6 border-white/10 hover:bg-white hover:text-black")}
           >
             Contact Us
           </Link>

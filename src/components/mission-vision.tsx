@@ -13,13 +13,13 @@ export function MissionVision() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="group p-12 rounded-[3rem] bg-white/[0.02] border border-white/5 hover:border-primary/20 transition-all duration-500"
+            className="group p-12 rounded-3xl border border-white/5 hover:border-white/10 transition-all duration-500"
           >
-            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8">
+            <div className="w-16 h-16 rounded-xl border border-white/10 flex items-center justify-center text-white/80 mb-8">
               <Target className="w-8 h-8" />
             </div>
             <h3 className="font-clash text-4xl font-bold text-white mb-6">Our Mission</h3>
-            <p className="font-general text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <p className="font-general text-lg md:text-xl text-white/40 leading-relaxed">
               To combine <span className="text-white font-medium">thoughtful design</span> with modern technology to create digital experiences that are easy to use, fast, and built for peak performance.
             </p>
           </motion.div>
@@ -29,21 +29,18 @@ export function MissionVision() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="group p-12 rounded-[3rem] bg-white/[0.02] border border-white/5 hover:border-primary/20 transition-all duration-500"
+            className="group p-12 rounded-3xl border border-white/5 hover:border-white/10 transition-all duration-500"
           >
-            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8">
+            <div className="w-16 h-16 rounded-xl border border-white/10 flex items-center justify-center text-white/80 mb-8">
               <Eye className="w-8 h-8" />
             </div>
             <h3 className="font-clash text-4xl font-bold text-white mb-6">Our Vision</h3>
-            <p className="font-general text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <p className="font-general text-lg md:text-xl text-white/40 leading-relaxed">
               To lead the <span className="text-white font-medium">evolution of digital experiences</span> through purposeful designs and innovative technology, creating products that are easy to use today and ready for future growth.
             </p>
           </motion.div>
         </div>
       </div>
-
-      {/* Background decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 blur-[120px] -z-10 rounded-full" />
     </section>
   );
 }

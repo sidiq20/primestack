@@ -42,20 +42,20 @@ export function ServicesPreview() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24 items-end">
           <div className="lg:col-span-8 space-y-6">
             <h2 className="font-clash text-4xl md:text-7xl font-bold tracking-tight text-white leading-tight">
-              Our <span className="text-gradient">Specialist</span> <br />
+              Our Specialist <br />
               Digital Solutions
             </h2>
-            <p className="font-general text-lg md:text-xl text-muted-foreground max-w-2xl">
+            <p className="font-general text-lg md:text-xl text-white/50 max-w-2xl">
               Thoughtful design meets modern technology. We create digital experiences that are easy to use today and ready for future growth.
             </p>
           </div>
           <div className="lg:col-span-4 flex lg:justify-end">
             <Link 
               href="/services" 
-              className="group flex items-center gap-4 font-satoshi font-black text-sm uppercase tracking-[0.2em] text-white hover:text-primary transition-colors"
+              className="group flex items-center gap-4 font-satoshi font-black text-sm uppercase tracking-[0.2em] text-white hover:text-white/60 transition-colors"
             >
               See our full stack
-              <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-primary group-hover:bg-primary transition-all">
+              <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-white/20 transition-all">
                 <ArrowRight className="w-5 h-5 group-hover:-rotate-45 transition-transform" />
               </div>
             </Link>
@@ -70,10 +70,10 @@ export function ServicesPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
-              className="group relative flex flex-col justify-between p-10 rounded-[2.5rem] bg-white/[0.02] border border-white/[0.05] hover:border-primary/30 transition-all duration-500 hover:bg-white/[0.04]"
+              className="group relative flex flex-col justify-between p-10 rounded-3xl border border-white/[0.05] hover:border-white/20 transition-all duration-500"
             >
               <div className="space-y-8">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-xl shadow-primary/5">
+                <div className="w-14 h-14 rounded-xl border border-white/10 flex items-center justify-center text-white/80 group-hover:text-white transition-all duration-500">
                   {service.icon}
                 </div>
                 
@@ -81,14 +81,14 @@ export function ServicesPreview() {
                   <h3 className="font-clash text-2xl font-bold text-white leading-tight">
                     {service.title}
                   </h3>
-                  <p className="font-general text-sm text-muted-foreground leading-relaxed h-16">
+                  <p className="font-general text-sm text-white/40 leading-relaxed h-16">
                     {service.description}
                   </p>
                 </div>
               </div>
 
               <div className="mt-12 pt-8 border-t border-white/[0.05]">
-                <p className="font-satoshi text-[10px] font-black uppercase tracking-widest text-primary/60 mb-6">
+                <p className="font-satoshi text-[10px] font-black uppercase tracking-widest text-white/30 mb-6">
                   {service.details}
                 </p>
                 <Link 
@@ -99,9 +99,6 @@ export function ServicesPreview() {
                   <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                 </Link>
               </div>
-
-              {/* Subtle hover accent */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
             </motion.div>
           ))}
         </div>

@@ -35,13 +35,13 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-32 px-4 bg-white/[0.01]">
+    <section className="py-32 px-4">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-20 space-y-4">
           <h2 className="font-clash text-4xl md:text-6xl font-bold text-white">
-            Common <span className="text-gradient italic font-fraunces">Questions</span>
+            Common Questions
           </h2>
-          <p className="font-general text-muted-foreground text-lg">
+          <p className="font-general text-white/40 text-lg">
             Everything you need to know about starting your project with PrimeStack.
           </p>
         </div>
@@ -50,20 +50,20 @@ export function FAQSection() {
           {faqs.map((faq, index) => (
             <div 
               key={index}
-              className="group rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-300"
+              className="group rounded-2xl border border-white/5 transition-all duration-300"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full p-8 flex items-center justify-between text-left"
               >
-                <span className="font-satoshi font-bold text-lg md:text-xl text-white group-hover:text-primary transition-colors">
+                <span className="font-satoshi font-bold text-lg md:text-xl text-white/80 group-hover:text-white transition-colors">
                   {faq.question}
                 </span>
                 <div className="flex-shrink-0 ml-4">
                   {openIndex === index ? (
-                    <Minus className="w-5 h-5 text-primary" />
+                    <Minus className="w-5 h-5 text-white" />
                   ) : (
-                    <Plus className="w-5 h-5 text-white/40 group-hover:text-white" />
+                    <Plus className="w-5 h-5 text-white/20 group-hover:text-white" />
                   )}
                 </div>
               </button>
@@ -77,7 +77,7 @@ export function FAQSection() {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="p-8 pt-0 font-general text-muted-foreground leading-relaxed md:text-lg">
+                    <div className="p-8 pt-0 font-general text-white/40 leading-relaxed md:text-lg">
                       {faq.answer}
                     </div>
                   </motion.div>
