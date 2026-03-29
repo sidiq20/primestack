@@ -41,7 +41,7 @@ export function Hero() {
               href="/contact" 
               className={cn(buttonVariants({ size: "lg" }), "group relative overflow-hidden font-satoshi font-bold rounded-full h-16 px-12 text-lg transition-all border border-white/20 hover:bg-white hover:text-black")}
             >
-              <span className="relative z-10">Let's build your presence</span>
+              <span className="relative z-10">Let's build your digital presence</span>
             </Link>
             <Link 
               href="/portfolio" 
@@ -61,7 +61,7 @@ export function Hero() {
           <div className="relative aspect-[16/9] rounded-[3rem] overflow-hidden border border-white/10">
             <Image
               src="/hero-sec-logo.jpeg"
-              alt="PrimeStack Visual Identity"
+              alt="PrimeStack Solutions Visual Identity"
               fill
               className="object-cover"
               priority

@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Instagram, Twitter, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/logo";
 
 export default function ContactPage() {
   return (
@@ -20,6 +21,9 @@ export default function ContactPage() {
             {/* Contact Info */}
             <div className="flex-1 space-y-12">
               <div className="space-y-6">
+                <div className="flex items-center gap-4 mb-8">
+                  <Logo mode="full" size="lg" />
+                </div>
                 <h1 className="font-clash text-5xl md:text-7xl font-bold tracking-tight">
                   Let's <span className="text-gradient italic font-fraunces">connect</span>
                 </h1>
@@ -35,7 +39,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-satoshi font-bold text-lg">Email us</h4>
-                    <p className="font-general text-muted-foreground">hello@primestack.com</p>
+                    <p className="font-general text-muted-foreground">primestackwebsolutions@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -44,7 +48,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-satoshi font-bold text-lg">Call us</h4>
-                    <p className="font-general text-muted-foreground">+44 (0) 123 456 7890</p>
+                    <p className="font-general text-muted-foreground">+234 9129144158</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -53,7 +57,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-satoshi font-bold text-lg">Visit us</h4>
-                    <p className="font-general text-muted-foreground">123 Digital Way, London, UK</p>
+                    <p className="font-general text-muted-foreground">Digital Hub, Lagos, Nigeria</p>
                   </div>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Instagram, Twitter, Linkedin, Github } from "lucide-react";
+import { Logo } from "@/components/logo";
 
 export function Footer() {
   return (
@@ -15,7 +16,7 @@ export function Footer() {
               height={40}
               className="rounded-xl brightness-150"
             />
-            <span className="font-syne font-bold text-2xl tracking-tight">PrimeStack</span>
+            <Logo mode="full" size="lg" />
           </Link>
           <p className="font-general text-gray-400 max-w-sm leading-relaxed">
             Crafting high-impact digital experiences for modern brands. We combine design excellence with technical precision to build legacies.
@@ -49,15 +50,15 @@ export function Footer() {
         <div>
           <h4 className="font-satoshi font-bold text-lg mb-6">Contact</h4>
           <ul className="space-y-4 font-general text-gray-400">
-            <li>hello@primestack.com</li>
-            <li>+44 (0) 123 456 7890</li>
+            <li>primestackwebsolutions@gmail.com</li>
+            <li>+234 9129144158</li>
             <li>123 Digital Way, London</li>
           </ul>
         </div>
       </div>
 
       <div className="max-w-6xl mx-auto pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-500 font-general">
-        <p>© 2026 PrimeStack Ltd. All rights reserved.</p>
+        <p>© 2026 PrimeStack Solutions Ltd. All rights reserved.</p>
         <div className="flex gap-8">
           <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
           <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>

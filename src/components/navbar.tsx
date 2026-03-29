@@ -14,6 +14,8 @@ const navLinks = [
   { name: "About", href: "/about" },
 ];
 
+import { Logo } from "@/components/logo";
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -44,7 +46,7 @@ export function Navbar() {
               height={32}
               className="rounded-lg"
             />
-            <span className="font-syne font-bold text-xl tracking-tight">PrimeStack</span>
+            <Logo mode="minimal" size="md" />
           </Link>
         </div>
 

@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import { Logo } from "@/components/logo";
 
 const faqs = [
   {
@@ -19,14 +20,14 @@ const faqs = [
   },
   {
     question: "Will my website be mobile-friendly?",
-    answer: "Yes. All websites built by Prime Stack Web Solutions are fully responsive and optimized for all devices, ensuring a smooth experience on phones, tablets, and desktops.",
+    answer: "Yes. All websites built by our team are fully responsive and optimized for all devices, ensuing a smooth experience on phones, tablets, and desktops.",
   },
   {
     question: "Do you offer website maintenance after launch?",
     answer: "Yes. We offer optional website maintenance for a monthly update fee, including regular updates, security checks, performance monitoring, and minor content changes.",
   },
   {
-    question: "How do I get started with Prime Stack Web Solutions?",
+    question: "How do I get started?",
     answer: "Simply contact us to schedule a call or in-person meeting, and we'll discuss your ideas, goals, and the best solution for your business.",
   },
 ];
@@ -41,8 +42,11 @@ export function FAQSection() {
           <h2 className="font-clash text-4xl md:text-6xl font-bold text-white">
             Common Questions
           </h2>
+          <div className="flex justify-center mb-6 scale-110">
+            <Logo mode="full" size="md" className="items-center text-center" />
+          </div>
           <p className="font-general text-white/40 text-lg">
-            Everything you need to know about starting your project with PrimeStack.
+            Everything you need to know about starting your project.
           </p>
         </div>
 

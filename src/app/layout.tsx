@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { LoadingScreen } from "@/components/loading-screen";
 import { Inter, Syne, DM_Sans, Fraunces } from "next/font/google";
+import { BackToTop } from "@/components/back-to-top";
 import "./globals.css";
 
 const inter = Inter({
@@ -34,18 +35,8 @@ export default function RootLayout({
 }>) {
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const hasSeenAnimation = localStorage.getItem("primestack_v2_seen");
-    if (hasSeenAnimation) {
-      setIsLoading(false);
-    }
-  }, []);
-
   const handleLoadingComplete = () => {
     setIsLoading(false);
-    if (typeof window !== "undefined") {
-      localStorage.setItem("primestack_v2_seen", "true");
-    }
   };
 
   return (
@@ -65,6 +56,7 @@ export default function RootLayout({
           ) : (
             <div key="content" className="animate-in fade-in duration-1000">
               {children}
+              <BackToTop />
             </div>
           )}
         </AnimatePresence>

@@ -21,7 +21,7 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
     return () => clearTimeout(timer);
   }, [step, onComplete]);
 
-  const words = ["Build", "Evolve", "Excel"];
+  const words = ["Build", "Evolve", "Zenith"];
 
   return (
     <motion.div
@@ -74,7 +74,7 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
           >
             <Image
               src="/p-logo.jpeg"
-              alt="PrimeStack Logo"
+              alt="PrimeStack Solutions Logo"
               fill
               className="rounded-3xl object-cover"
               priority

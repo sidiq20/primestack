@@ -8,6 +8,7 @@ import { FinalCTA } from "@/components/final-cta";
 import { MissionVision } from "@/components/mission-vision";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Logo } from "@/components/logo";
 
 const team = [
   {
@@ -56,14 +57,19 @@ export default function AboutPage() {
           >
             Our Story
           </motion.h1>
-          <motion.p 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="font-general text-white/40 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto"
+            className="flex flex-col items-center"
           >
-            PrimeStack Web Solutions: Built on trust, skill, and a passion for delivering peak results.
-          </motion.p>
+            <div className="flex justify-center mb-4">
+              <Logo mode="full" size="lg" className="items-center" />
+            </div>
+            <p className="font-general text-white/40 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+              Built on trust, skill, and a passion for delivering peak results.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -75,7 +81,7 @@ export default function AboutPage() {
               <h2 className="font-clash text-4xl md:text-5xl font-bold text-white">How it started</h2>
               <div className="font-general text-white/40 text-lg leading-relaxed space-y-6">
                 <p>
-                  PrimeStack Web Solutions was born in late 2025 and officially launched in January 2026 with a simple mission: to showcase talent and deliver peak results through collaboration and innovation.
+                  Our team was born in late 2025 and officially launched in January 2026 with a simple mission: to showcase talent and deliver peak results through collaboration and innovation.
                 </p>
                 <p>
                   The idea started with Faleke Emmanuel Ayomide and was refined by Famade Eniola. Daniel Gbolahun and Samuel Emmanuel joined soon after, bringing the technical and creative expertise needed to form a team built for excellence.
@@ -88,7 +94,7 @@ export default function AboutPage() {
             <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10">
               <Image 
                 src="https://images.unsplash.com/photo-1522071820081-99bc2f41a044?auto=format&fit=crop&q=80&w=2340" 
-                alt="PrimeStack Team Collaboration" 
+                alt="PrimeStack Solutions Team Collaboration" 
                 fill
                 className="object-cover"
               />
@@ -100,8 +106,11 @@ export default function AboutPage() {
           {/* Approach Section */}
           <div className="py-24 rounded-3xl border border-white/5 p-8 md:p-20 text-center space-y-12">
             <h2 className="font-clash text-4xl md:text-6xl font-bold text-white">Our Approach & Values</h2>
+            <div className="flex justify-center scale-150 mb-12">
+              <Logo mode="full" size="md" className="items-center" />
+            </div>
             <p className="font-general text-white/40 text-lg md:text-xl max-w-3xl mx-auto">
-              At PrimeStack, quality starts with clarity. We listen to your needs, communicate openly, and transform ideas into results that work.
+              Quality starts with clarity. We listen to your needs, communicate openly, and transform ideas into results that work.
             </p>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
               {['Quality', 'Speed', 'Transparency', 'Client Care'].map((value) => (

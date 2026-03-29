@@ -5,7 +5,7 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "PrimeStack transformed our digital presence. The new brand identity is exactly what we needed to stand out.",
+    quote: "PrimeStack Solutions transformed our digital presence. The new brand identity is exactly what we needed to stand out.",
     author: "Sarah J.",
     role: "CEO at EcoSphere",
   },
