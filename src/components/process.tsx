@@ -39,8 +39,6 @@ export function Process() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
-          {/* Connecting Line (Desktop) */}
-          <div className="hidden md:block absolute top-[2.25rem] left-0 right-0 h-[1px] bg-gradient-to-r from-primary/20 via-primary to-primary/20 -z-10" />
 
           {steps.map((step, index) => (
             <motion.div
@@ -49,13 +47,13 @@ export function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="space-y-6"
+              className="group space-y-4"
             >
-              <div className="w-18 h-18 bg-primary rounded-2xl flex items-center justify-center font-clash text-2xl font-bold shadow-2xl shadow-primary/40">
+              <div className="font-fraunces text-6xl md:text-7xl font-black text-primary/10 group-hover:text-primary/30 transition-colors duration-500 italic -mb-6 relative z-0">
                 {step.number}
               </div>
-              <div className="space-y-3">
-                <h3 className="font-clash text-2xl font-bold">{step.title}</h3>
+              <div className="space-y-3 relative z-10">
+                <h3 className="font-clash text-2xl font-bold tracking-tight">{step.title}</h3>
                 <p className="font-general text-gray-400 leading-relaxed text-sm">
                   {step.description}
                 </p>
