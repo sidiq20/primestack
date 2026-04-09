@@ -131,16 +131,15 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {team.map((member, index) => (
                 <div key={index} className="space-y-6 group">
-                  <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/10">
-                    <Image 
-                      src={member.image} 
-                      alt={member.name} 
-                      fill
-                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                    />
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all duration-700" />
-                    <div className="absolute bottom-6 left-6 right-6">
-                       <p className="font-clash text-[10px] font-bold uppercase tracking-widest text-white/40 mb-1">{member.role}</p>
+                  <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-7xl font-satoshi font-bold tracking-tighter text-white/10 group-hover:text-white/20 transition-colors duration-700">
+                        {member.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                      </span>
+                    </div>
+                    <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-black via-black/80 to-transparent" />
+                    <div className="absolute bottom-6 left-6 right-6 z-10 text-center">
+                       <p className="font-clash text-[10px] font-bold uppercase tracking-widest text-primary mb-2">{member.role}</p>
                        <h4 className="font-satoshi font-bold text-xl text-white">{member.name}</h4>
                     </div>
                   </div>
