@@ -1,10 +1,6 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { AnimatePresence } from "framer-motion";
-import { LoadingScreen } from "@/components/loading-screen";
+import type { Metadata } from "next";
 import { Inter, Syne, DM_Sans, Fraunces } from "next/font/google";
-import { BackToTop } from "@/components/back-to-top";
+import { AppWrapper } from "@/components/app-wrapper";
 import "./globals.css";
 
 const inter = Inter({
@@ -28,17 +24,67 @@ const fraunces = Fraunces({
   style: ["normal", "italic"],
 });
 
+export const metadata: Metadata = {
+  title: {
+    default: "PrimeStack Web Solutions | Premium Digital Agency",
+    template: "%s | PrimeStack Web Solutions",
+  },
+  description: "Crafting high-impact digital experiences for modern brands. We combine design excellence with technical precision to build legacies.",
+  keywords: ["web design", "digital agency", "brand identity", "web development", "UI/UX design", "social media strategy", "Lagos digital agency"],
+  authors: [{ name: "PrimeStack Web Solutions" }],
+  creator: "PrimeStack Web Solutions",
+  publisher: "PrimeStack Web Solutions",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    title: "PrimeStack Web Solutions | Premium Digital Agency",
+    description: "Crafting high-impact digital experiences for modern brands. We combine design excellence with technical precision to build legacies.",
+    url: "https://primestackws.com", // update with real URL if known
+    siteName: "PrimeStack Web Solutions",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PrimeStack Web Solutions - Premium Digital Agency",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PrimeStack Web Solutions | Premium Digital Agency",
+    description: "Crafting high-impact digital experiences for modern brands.",
+    creator: "@primestackws_",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/p-logo.jpeg",
+    shortcut: "/p-logo.jpeg",
+    apple: "/p-logo.jpeg",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [isLoading, setIsLoading] = useState(true);
-
-  const handleLoadingComplete = () => {
-    setIsLoading(false);
-  };
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -50,16 +96,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${syne.variable} ${dmSans.variable} ${fraunces.variable} antialiased`}
       >
-        <AnimatePresence mode="wait">
-          {isLoading ? (
-            <LoadingScreen key="loader" onComplete={handleLoadingComplete} />
-          ) : (
-            <div key="content" className="animate-in fade-in duration-1000">
-              {children}
-              <BackToTop />
-            </div>
-          )}
-        </AnimatePresence>
+        <AppWrapper>
+          {children}
+        </AppWrapper>
       </body>
     </html>
   );

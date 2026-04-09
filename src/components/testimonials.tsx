@@ -30,6 +30,17 @@ const testimonials = [
 export function Testimonials() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto-scroll every 5 seconds
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      setDirection(1);
+      setIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   const slideVariants = {
     enter: (direction: number) => ({
@@ -62,7 +73,11 @@ export function Testimonials() {
   };
 
   return (
-    <section className="py-24 px-4 overflow-hidden bg-secondary/20 relative">
+    <section
+      className="py-24 px-4 overflow-hidden bg-secondary/20 relative"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <div className="max-w-6xl mx-auto mb-16 text-center">
         <h2 className="font-clash text-3xl md:text-5xl font-bold tracking-tight">
           Don't just take <span className="text-gradient italic font-fraunces">our word for it</span>
