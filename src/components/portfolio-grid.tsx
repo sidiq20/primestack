@@ -42,7 +42,7 @@ export function PortfolioGrid() {
   return (
     <section className="py-32 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row items-end justify-between mb-24 gap-8">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-16 md:mb-24 gap-8">
           <div className="space-y-6">
             <h2 className="font-clash text-4xl md:text-7xl font-bold tracking-tight text-white leading-[0.9]">
               Selected Works

@@ -25,10 +25,10 @@ export function Footer() {
             <Link href="https://x.com/primestackws_" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white transition-colors">
               <Twitter className="w-5 h-5" />
             </Link>
-            <Link href="https://www.instagram.com/primestackws_" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white transition-colors">
+            <Link href="https://www.instagram.com/primestackws_?" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white transition-colors">
               <Instagram className="w-5 h-5" />
             </Link>
-            <Link href="https://www.linkedin.com/in/prime-stack-web-solutions-a676b53a4" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white transition-colors">
+            <Link href="https://www.linkedin.com/in/prime-stack-web-solutions-a676b53a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-white transition-colors">
               <Linkedin className="w-5 h-5" />
             </Link>
           </div>

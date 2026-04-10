@@ -13,32 +13,33 @@ import { Logo } from "@/components/logo";
 const team = [
   {
     name: "Faleke Emmanuel Ayomide",
-    role: "Founder & Visionary",
-    bio: "The driving force behind PrimeStack, dedicated to delivering peak results through collaboration.",
+    initials: "FEA",
+    role: "Founder & Website Security Lead",
+    bio: "I keep every website we deliver safe and secure, protecting client data while supporting high-performing, reliable digital solutions.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1974",
   },
   {
     name: "Famade Eniola",
-    role: "Strategy & Refinement",
-    bio: "Translating vision into actionable strategy and ensuring excellence in every project.",
+    role: "Software Development Lead",
+    bio: "I translates design into high-performing modern user focused web applications while ensuring scalability, reliability, and clean architecture across the stack.",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=1974",
   },
   {
     name: "Daniel Gbolahun",
-    role: "Technical Expertise",
-    bio: "Bringing deep technical knowledge and creative problem-solving to complex digital builds.",
+    role: "Creative Lead",
+    bio: "I shape creative direction from concept to execution. As a strategy-driven, detail-oriented graphic designer, I translate ideas into visually compelling, brand-focused designs.",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=1974",
   },
   {
     name: "Samuel Emmanuel",
-    role: "Creative Direction",
-    bio: "Infusing fresh perspectives and visual excellence into the PrimeStack ecosystem.",
+    role: "Head of Social Media",
+    bio: "I lead our digital storytelling and online presence, creating engaging content and strategies that connect our audience to the brand.",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=2340",
   },
   {
     name: "Sidiq Olasode",
-    role: "Assistant Technical Lead",
-    bio: "Supporting the technical vision and ensuring high standards in execution and system architecture.",
+    role: "Assistant Technical Developer",
+    bio: "I support the technical vision, bringing precision to our codebase and ensuring high standards in execution and system architecture for a robust digital experience.",
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=1974",
   },
 ];
@@ -93,7 +94,7 @@ export default function AboutPage() {
             </div>
             <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10">
               <Image 
-                src="https://images.unsplash.com/photo-1522071820081-99bc2f41a044?auto=format&fit=crop&q=80&w=2340" 
+                src="/hero-sec-logo.jpeg" 
                 alt="PrimeStack Solutions Team Collaboration" 
                 fill
                 className="object-cover"
@@ -123,31 +124,40 @@ export default function AboutPage() {
           </div>
 
           {/* Team Section */}
-          <div className="space-y-16">
+          <div className="space-y-16 overflow-hidden max-w-[100vw]">
             <div className="text-center space-y-4">
               <h2 className="font-clash text-4xl md:text-6xl font-bold text-white">The Brains Behind the Team</h2>
             </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {team.map((member, index) => (
-                <div key={index} className="space-y-6 group">
-                  <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-7xl font-satoshi font-bold tracking-tighter text-white/10 group-hover:text-white/20 transition-colors duration-700">
-                        {member.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
-                      </span>
+            
+            <div className="relative flex w-full">
+              <motion.div 
+                className="flex gap-8 w-max pr-8"
+                animate={{ x: ["0%", "-50%"] }}
+                transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
+              >
+                {[...team, ...team].map((member, index) => (
+                  <div key={index} className="space-y-6 group flex-shrink-0 w-[280px] sm:w-[320px]">
+                    <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-7xl font-satoshi font-bold tracking-tighter text-white/10 group-hover:text-white/20 transition-colors duration-700">
+                          {/* @ts-ignore */}
+                          {member.initials || member.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                        </span>
+                      </div>
+                      <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-black via-black/80 to-transparent" />
+                      <div className="absolute bottom-6 left-0 right-0 z-10 text-center flex flex-col items-center px-4">
+                         <p className="font-clash text-[10px] font-bold uppercase tracking-widest text-primary mb-3">{member.role}</p>
+                         <div className="border border-white/20 rounded-full px-6 py-2 bg-black/40 backdrop-blur-md">
+                           <h4 className="font-satoshi font-bold text-lg text-white whitespace-nowrap">{member.name}</h4>
+                         </div>
+                      </div>
                     </div>
-                    <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-black via-black/80 to-transparent" />
-                    <div className="absolute bottom-6 left-6 right-6 z-10 text-center">
-                       <p className="font-clash text-[10px] font-bold uppercase tracking-widest text-primary mb-2">{member.role}</p>
-                       <h4 className="font-satoshi font-bold text-xl text-white">{member.name}</h4>
-                    </div>
+                    <p className="font-general text-sm text-white/40 leading-relaxed px-2 text-center h-[100px] overflow-hidden text-ellipsis md:text-left md:h-auto">
+                      {member.bio}
+                    </p>
                   </div>
-                  <p className="font-general text-sm text-white/40 leading-relaxed px-2">
-                    {member.bio}
-                  </p>
-                </div>
-              ))}
+                ))}
+              </motion.div>
             </div>
           </div>
         </div>

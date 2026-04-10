@@ -75,8 +75,8 @@ export default function ServicesPage() {
             >
               <div className="flex-1 space-y-10">
                 <div className="inline-flex items-center gap-4">
-                  <div className="border border-white/10 p-5 rounded-3xl text-white/80">
-                    <service.icon.type {...service.icon.props} className="w-12 h-12 text-white/60" />
+                  <div className="border border-white/10 p-4 md:p-5 rounded-3xl text-white/80">
+                    <service.icon.type {...service.icon.props} className="w-8 h-8 md:w-12 md:h-12 text-white/60" />
                   </div>
                   <div className="h-px w-12 bg-white/10" />
                 </div>
@@ -110,8 +110,8 @@ export default function ServicesPage() {
               </div>
 
               <div className="flex-1 w-full relative">
-                <div className="aspect-square rounded-[3rem] border border-white/10 flex items-center justify-center relative overflow-hidden group">
-                  <service.icon.type {...service.icon.props} className="w-32 h-32 md:w-48 md:h-48 text-white/[0.03] group-hover:text-white/[0.05] transition-all duration-700 group-hover:scale-105" />
+                <div className="aspect-square rounded-[2rem] md:rounded-[3rem] border border-white/10 flex items-center justify-center relative overflow-hidden group">
+                  <service.icon.type {...service.icon.props} className="w-24 h-24 md:w-48 md:h-48 text-white/[0.03] group-hover:text-white/[0.05] transition-all duration-700 group-hover:scale-105" />
                 </div>
               </div>
             </motion.div>

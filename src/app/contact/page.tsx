@@ -57,7 +57,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-satoshi font-bold text-lg">Visit us</h4>
-                    <p className="font-general text-muted-foreground">Digital Hub, Lagos, Nigeria</p>
+                    <p className="font-general text-muted-foreground">Lagos, Nigeria</p>
                   </div>
                 </div>
               </div>
@@ -65,50 +65,30 @@ export default function ContactPage() {
               <div className="pt-8 space-y-6">
                 <h4 className="font-satoshi font-bold text-lg">Follow our journey</h4>
                 <div className="flex items-center gap-6">
-                  <Link href="#" className="p-3 bg-secondary rounded-2xl hover:bg-primary hover:text-white transition-colors">
+                  <Link href="https://www.instagram.com/primestackws_?" target="_blank" rel="noopener noreferrer" className="p-3 bg-secondary rounded-2xl hover:bg-primary hover:text-white transition-colors">
                     <Instagram className="w-6 h-6" />
                   </Link>
-                  <Link href="#" className="p-3 bg-secondary rounded-2xl hover:bg-primary hover:text-white transition-colors">
+                  <Link href="https://x.com/primestackws_" target="_blank" rel="noopener noreferrer" className="p-3 bg-secondary rounded-2xl hover:bg-primary hover:text-white transition-colors">
                     <Twitter className="w-6 h-6" />
                   </Link>
-                  <Link href="#" className="p-3 bg-secondary rounded-2xl hover:bg-primary hover:text-white transition-colors">
+                  <Link href="https://www.linkedin.com/in/prime-stack-web-solutions-a676b53a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" className="p-3 bg-secondary rounded-2xl hover:bg-primary hover:text-white transition-colors">
                     <Linkedin className="w-6 h-6" />
                   </Link>
                 </div>
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div className="flex-1 glass rounded-[3rem] p-8 md:p-12 border-white/10 shadow-2xl">
-              <form className="space-y-8">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="font-satoshi font-bold text-sm ml-1">Name</label>
-                    <Input placeholder="John Doe" className="rounded-2xl h-12 bg-white/5 border-white/10" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="font-satoshi font-bold text-sm ml-1">Email</label>
-                    <Input placeholder="john@example.com" type="email" className="rounded-2xl h-12 bg-white/5 border-white/10" />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="font-satoshi font-bold text-sm ml-1">Subject</label>
-                  <Input placeholder="Project Inquiry" className="rounded-2xl h-12 bg-white/5 border-white/10" />
-                </div>
-                <div className="space-y-2">
-                  <label className="font-satoshi font-bold text-sm ml-1">Message</label>
-                  <Textarea 
-                    placeholder="Tell us about your project..." 
-                    className="rounded-[2rem] min-h-[150px] bg-white/5 border-white/10"
-                  />
-                </div>
+            {/* Contact Action */}
+            <div className="flex-1 glass rounded-[3rem] p-8 md:p-12 border-white/10 shadow-2xl flex flex-col justify-center items-center text-center space-y-6">
+              <h2 className="font-clash text-3xl md:text-5xl font-bold">Ready to start?</h2>
+              <p className="font-general text-muted-foreground text-lg pb-4">
+                Send us an email directly and we'll get back to you within 24-48 hours.
+              </p>
+              <Link href="mailto:primestackwebsolutions@gmail.com" className="w-full">
                 <Button className={cn(buttonVariants({ size: "lg" }), "w-full rounded-2xl h-14 font-satoshi font-bold text-lg transition-all hover:scale-[1.02]")}>
-                  Send Message
+                  Email Us Now
                 </Button>
-                <p className="text-center font-general text-xs text-muted-foreground pt-4">
-                  We typically respond within 24-48 hours.
-                </p>
-              </form>
+              </Link>
             </div>
           </div>
         </div>
