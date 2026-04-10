@@ -6,16 +6,6 @@ import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "PrimeStack Solutions transformed our digital presence. The new brand identity is exactly what we needed to stand out.",
-    author: "Sarah J.",
-    role: "CEO at EcoSphere",
-  },
-  {
-    quote: "Working with them was seamless. The website is lightning fast and our conversion rate has doubled.",
-    author: "Mark T.",
-    role: "Marketing Director at Zenith",
-  },
-  {
     quote: "A well created brand identity that resonate us in all aspect.. Thanks for service well delivered",
     author: "Salami Adebisi M.",
     role: "CEO of Homezetalgift",
@@ -24,6 +14,16 @@ const testimonials = [
     quote: "PrimeStack built my law website portfolio with incredible precision. They delivered a highly professional platform that perfectly represents my legal practice.",
     author: "Olasode Faruk",
     role: "Legal Professional",
+  },
+  {
+    quote: "PrimeStack Solutions transformed our digital presence. The new brand identity is exactly what we needed to stand out.",
+    author: "Sarah J.",
+    role: "CEO at EcoSphere",
+  },
+  {
+    quote: "Working with them was seamless. The website is lightning fast and our conversion rate has doubled.",
+    author: "Mark T.",
+    role: "Marketing Director at Zenith",
   },
   {
     quote: "Professional, creative, and technical. They are the ultimate partners for any modern brand.",
