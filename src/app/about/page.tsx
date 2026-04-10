@@ -144,15 +144,15 @@ export default function AboutPage() {
                           {member.initials || member.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
                         </span>
                       </div>
-                      <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-black via-black/80 to-transparent" />
-                      <div className="absolute bottom-6 left-0 right-0 z-10 text-center flex flex-col items-center px-4">
-                         <p className="font-clash text-[10px] font-bold uppercase tracking-widest text-primary mb-3">{member.role}</p>
-                         <div className="border border-white/20 rounded-full px-6 py-2 bg-black/40 backdrop-blur-md">
-                           <h4 className="font-satoshi font-bold text-lg text-white whitespace-nowrap">{member.name}</h4>
+                      <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
+                      <div className="absolute bottom-6 left-0 right-0 z-10 text-center flex flex-col items-center px-2">
+                         <p className="font-satoshi text-[11px] font-bold uppercase tracking-widest text-primary mb-3 drop-shadow-sm">{member.role}</p>
+                         <div className="rounded-full px-5 py-2 bg-black/40 backdrop-blur-md border border-white/10 w-fit max-w-[90%]">
+                           <h4 className="font-clash font-medium text-lg leading-tight text-white drop-shadow-md text-balance">{member.name}</h4>
                          </div>
                       </div>
                     </div>
-                    <p className="font-general text-sm text-white/40 leading-relaxed px-2 text-center h-[100px] overflow-hidden text-ellipsis md:text-left md:h-auto">
+                    <p className="font-satoshi text-base font-medium text-white/80 leading-relaxed px-2 text-center md:text-left h-auto pb-4">
                       {member.bio}
                     </p>
                   </div>
