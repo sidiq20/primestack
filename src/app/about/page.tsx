@@ -14,25 +14,25 @@ const team = [
   {
     name: "Faleke Emmanuel Ayomide",
     initials: "FEA",
-    role: "Founder & Website Security Lead",
+    role: "CEO & Website Security Lead",
     bio: "I keep every website we deliver safe and secure, protecting client data while supporting high-performing, reliable digital solutions.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1974",
   },
   {
     name: "Famade Eniola",
-    role: "Software Development Lead",
+    role: "Lead Technical Developer",
     bio: "I translates design into high-performing modern user focused web applications while ensuring scalability, reliability, and clean architecture across the stack.",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=1974",
   },
   {
     name: "Daniel Gbolahun",
-    role: "Creative Lead",
+    role: "Creative director",
     bio: "I shape creative direction from concept to execution. As a strategy-driven, detail-oriented graphic designer, I translate ideas into visually compelling, brand-focused designs.",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=1974",
   },
   {
     name: "Samuel Emmanuel",
-    role: "Head of Social Media",
+    role: " Social Media Manager",
     bio: "I lead our digital storytelling and online presence, creating engaging content and strategies that connect our audience to the brand.",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=2340",
   },
@@ -146,13 +146,13 @@ export default function AboutPage() {
                       </div>
                       <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
                       <div className="absolute bottom-6 left-0 right-0 z-10 text-center flex flex-col items-center px-2">
-                         <p className="font-satoshi text-[11px] font-bold uppercase tracking-widest text-primary mb-3 drop-shadow-sm">{member.role}</p>
+                         <p className="font-fraunces italic text-[14px] tracking-wide text-primary mb-3 drop-shadow-md">{member.role}</p>
                          <div className="rounded-full px-5 py-2 bg-black/40 backdrop-blur-md border border-white/10 w-fit max-w-[90%]">
                            <h4 className="font-clash font-medium text-lg leading-tight text-white drop-shadow-md text-balance">{member.name}</h4>
                          </div>
                       </div>
                     </div>
-                    <p className="font-satoshi text-base font-medium text-white/80 leading-relaxed px-2 text-center md:text-left h-auto pb-4">
+                    <p className="font-syne text-[15px] tracking-wide font-normal text-white/80 leading-relaxed px-2 text-center md:text-left h-auto pb-4">
                       {member.bio}
                     </p>
                   </div>

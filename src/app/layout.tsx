@@ -26,23 +26,23 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: {
-    default: "PrimeStack Web Solutions | Premium Digital Agency",
-    template: "%s | PrimeStack Web Solutions",
+    default: "Prime Stack Web Solutions | Web Design, Development & Digital Security",
+    template: "%s | Prime Stack Web Solutions",
   },
-  description: "Crafting high-impact digital experiences for modern brands. We combine design excellence with technical precision to build legacies.",
-  keywords: ["web design", "digital agency", "brand identity", "web development", "UI/UX design", "social media strategy", "Lagos digital agency"],
-  authors: [{ name: "PrimeStack Web Solutions" }],
-  creator: "PrimeStack Web Solutions",
-  publisher: "PrimeStack Web Solutions",
+  description: "Prime Stack Web Solutions is a premium digital agency offering expert web design, software development, brand identity, and website security. Based in Lagos, Nigeria, we elevate modern brands with high-performing digital experiences.",
+  keywords: ["web design Lagos", "software development Nigeria", "website security experts", "premium digital agency", "brand identity", "UI/UX design", "social media strategy", "custom web development", "startup websites", "SEO optimization"],
+  authors: [{ name: "Prime Stack Web Solutions" }],
+  creator: "Prime Stack Web Solutions",
+  publisher: "Prime Stack Web Solutions",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: "PrimeStack Web Solutions | Premium Digital Agency",
-    description: "Crafting high-impact digital experiences for modern brands. We combine design excellence with technical precision to build legacies.",
-    url: "https://primestackws.com", // update with real URL if known
+    title: "Prime Stack Web Solutions | Web Design, Development & Digital Security",
+    description: "Expert web design, software development, and digital security. We combine design excellence with technical precision to build legacies.",
+    url: "https://www.primestackwebsolutions.com", // update with real URL if known
     siteName: "PrimeStack Web Solutions",
     images: [
       {

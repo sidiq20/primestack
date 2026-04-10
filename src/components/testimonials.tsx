@@ -16,9 +16,14 @@ const testimonials = [
     role: "Marketing Director at Zenith",
   },
   {
-    quote: "The strategic approach to social media management has grown our audience by 300% in just 3 months.",
-    author: "Elena R.",
-    role: "Founder at Luna Social",
+    quote: "A well created brand identity that resonate us in all aspect.. Thanks for service well delivered",
+    author: "Salami Adebisi M.",
+    role: "CEO of Homezetalgift",
+  },
+  {
+    quote: "PrimeStack built my law website portfolio with incredible precision. They delivered a highly professional platform that perfectly represents my legal practice.",
+    author: "Olasode Faruk",
+    role: "Legal Professional",
   },
   {
     quote: "Professional, creative, and technical. They are the ultimate partners for any modern brand.",
