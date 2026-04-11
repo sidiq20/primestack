@@ -1,14 +1,14 @@
 "use client";
 
-"use client";
-
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { FinalCTA } from "@/components/final-cta";
 import { MissionVision } from "@/components/mission-vision";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Logo } from "@/components/logo";
+import { useState, useRef, useEffect } from "react";
+import { LayoutGrid, Play, ChevronLeft, ChevronRight } from "lucide-react";
 
 const team = [
   {
@@ -45,6 +45,57 @@ const team = [
 ];
 
 export default function AboutPage() {
+  const [isGridView, setIsGridView] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isAutoScrolling, setIsAutoScrolling] = useState(true);
+  const [lastActivity, setLastActivity] = useState(Date.now());
+
+  // Auto-scroll loop
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (isAutoScrolling && scrollRef.current && !isGridView) {
+      interval = setInterval(() => {
+        if (scrollRef.current) {
+          const { scrollLeft, scrollWidth } = scrollRef.current;
+          // Reset if we've scrolled past the first set of items
+          if (scrollLeft >= scrollWidth / 2) {
+            scrollRef.current.scrollLeft = 0;
+          } else {
+            scrollRef.current.scrollLeft += 1;
+          }
+        }
+      }, 25);
+    }
+    return () => clearInterval(interval);
+  }, [isAutoScrolling, isGridView]);
+
+  // Inactivity monitor to resume scrolling
+  useEffect(() => {
+    const checkInactivity = setInterval(() => {
+      if (!isAutoScrolling && Date.now() - lastActivity > 10000) {
+        setIsAutoScrolling(true);
+      }
+    }, 1000);
+    return () => clearInterval(checkInactivity);
+  }, [isAutoScrolling, lastActivity]);
+
+  const handleInteraction = () => {
+    setIsAutoScrolling(false);
+    setLastActivity(Date.now());
+  };
+
+  const scroll = (direction: 'left' | 'right') => {
+    handleInteraction();
+    if (scrollRef.current) {
+      const scrollAmount = 350;
+      const targetScroll = scrollRef.current.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
+      scrollRef.current.scrollTo({
+        left: targetScroll,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <main className="min-h-screen bg-background">
       <Navbar />
@@ -125,40 +176,122 @@ export default function AboutPage() {
 
           {/* Team Section */}
           <div className="space-y-16 overflow-hidden max-w-[100vw]">
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-6">
               <h2 className="font-clash text-4xl md:text-6xl font-bold text-white">The Brains Behind the Team</h2>
+              <div className="flex justify-center">
+                <button
+                  onClick={() => setIsGridView(!isGridView)}
+                  className="flex items-center gap-3 px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group"
+                >
+                  <span className="font-general text-sm font-medium text-white/80 group-hover:text-white uppercase tracking-[0.2em]">
+                    {isGridView ? "Back to Scroll" : "Explore Full Team"}
+                  </span>
+                  {isGridView ? (
+                    <Play className="w-4 h-4 text-primary fill-primary" />
+                  ) : (
+                    <LayoutGrid className="w-4 h-4 text-primary" />
+                  )}
+                </button>
+              </div>
             </div>
             
-            <div className="relative flex w-full">
-              <motion.div 
-                className="flex gap-8 w-max pr-8"
-                animate={{ x: ["0%", "-50%"] }}
-                transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
-              >
-                {[...team, ...team].map((member, index) => (
-                  <div key={index} className="space-y-6 group flex-shrink-0 w-[280px] sm:w-[320px]">
-                    <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-7xl font-satoshi font-bold tracking-tighter text-white/10 group-hover:text-white/20 transition-colors duration-700">
-                          {/* @ts-ignore */}
-                          {member.initials || member.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
-                        </span>
-                      </div>
-                      <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
-                      <div className="absolute bottom-6 left-0 right-0 z-10 text-center flex flex-col items-center px-2">
-                         <p className="font-satoshi text-[11px] font-bold uppercase tracking-widest text-primary mb-3 drop-shadow-sm">{member.role}</p>
-                         <div className="rounded-full px-5 py-2 bg-black/40 backdrop-blur-md border border-white/10 w-fit max-w-[90%]">
-                           <h4 className="font-clash font-medium text-lg leading-tight text-white drop-shadow-md text-balance">{member.name}</h4>
-                         </div>
-                      </div>
-                    </div>
-                    <p className="font-satoshi text-base font-medium text-white/80 leading-relaxed px-2 text-center md:text-left h-auto pb-4">
-                      {member.bio}
-                    </p>
+            <AnimatePresence mode="wait">
+              {!isGridView ? (
+                <motion.div
+                  key="marquee"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="relative group/marquee"
+                >
+                  {/* Navigation Arrows - always visible on mobile, hover on desktop */}
+                  <div className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 opacity-100 md:opacity-0 md:group-hover/marquee:opacity-100 transition-opacity duration-300">
+                    <button
+                      onClick={() => scroll('left')}
+                      className="p-3 md:p-4 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-white active:scale-90 hover:bg-primary/20 hover:border-primary/50 transition-all duration-300"
+                    >
+                      <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+                    </button>
                   </div>
-                ))}
-              </motion.div>
-            </div>
+                  <div className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 opacity-100 md:opacity-0 md:group-hover/marquee:opacity-100 transition-opacity duration-300">
+                    <button
+                      onClick={() => scroll('right')}
+                      className="p-3 md:p-4 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-white active:scale-90 hover:bg-primary/20 hover:border-primary/50 transition-all duration-300"
+                    >
+                      <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+                    </button>
+                  </div>
+
+                  <div 
+                    ref={scrollRef}
+                    onMouseDown={handleInteraction}
+                    onTouchStart={handleInteraction}
+                    onWheel={handleInteraction}
+                    className="flex overflow-x-auto scrollbar-hide gap-8 px-4 pb-8 snap-x snap-mandatory no-scrollbar"
+                  >
+                    {[...team, ...team].map((member, index) => (
+                      <div key={index} className="space-y-6 group flex-shrink-0 w-[280px] sm:w-[320px] snap-center">
+                        <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <span className="text-7xl font-satoshi font-bold tracking-tighter text-white/10 group-hover:text-white/20 transition-colors duration-700">
+                              {/* @ts-ignore */}
+                              {member.initials || member.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                            </span>
+                          </div>
+                          <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
+                          <div className="absolute bottom-6 left-0 right-0 z-10 text-center flex flex-col items-center px-2">
+                             <p className="font-satoshi text-[11px] font-bold uppercase tracking-widest text-primary mb-3 drop-shadow-sm">{member.role}</p>
+                             <div className="rounded-full px-5 py-2 bg-black/40 backdrop-blur-md border border-white/10 w-fit max-w-[90%]">
+                               <h4 className="font-clash font-medium text-lg leading-tight text-white drop-shadow-md text-balance">{member.name}</h4>
+                             </div>
+                          </div>
+                        </div>
+                        <p className="font-satoshi text-base font-medium text-white/80 leading-relaxed px-2 text-center md:text-left h-auto pb-4">
+                          {member.bio}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Edge fade overlays */}
+                  <div className="absolute inset-y-0 left-0 w-20 md:w-32 bg-gradient-to-r from-background to-transparent pointer-events-none z-10" />
+                  <div className="absolute inset-y-0 right-0 w-20 md:w-32 bg-gradient-to-l from-background to-transparent pointer-events-none z-10" />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="grid"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.5 }}
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-7xl mx-auto pb-20"
+                >
+                  {team.map((member, index) => (
+                    <div key={index} className="space-y-6 group">
+                      <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center">
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <span className="text-7xl font-satoshi font-bold tracking-tighter text-white/10 group-hover:text-white/20 transition-colors duration-700">
+                            {/* @ts-ignore */}
+                            {member.initials || member.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                          </span>
+                        </div>
+                        <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
+                        <div className="absolute bottom-6 left-0 right-0 z-10 text-center flex flex-col items-center px-2">
+                           <p className="font-satoshi text-[11px] font-bold uppercase tracking-widest text-primary mb-3 drop-shadow-sm">{member.role}</p>
+                           <div className="rounded-full px-5 py-2 bg-black/40 backdrop-blur-md border border-white/10 w-fit max-w-[90%]">
+                             <h4 className="font-clash font-medium text-lg leading-tight text-white drop-shadow-md text-balance">{member.name}</h4>
+                           </div>
+                        </div>
+                      </div>
+                      <p className="font-satoshi text-base font-medium text-white/80 leading-relaxed px-2 text-center h-auto pb-4">
+                        {member.bio}
+                      </p>
+                    </div>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </section>
