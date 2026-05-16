@@ -18,7 +18,7 @@ export default function Home() {
       <TrustHighlights />
       <MissionVision />
       <ServicesPreview />
-      <PortfolioGrid />
+      <PortfolioGrid limit={5} />
       <Process />
       <Testimonials />
       <FAQSection />
