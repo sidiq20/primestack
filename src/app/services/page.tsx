@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { FinalCTA } from "@/components/final-cta";
 import { Laptop, RefreshCw, Search, Fingerprint, CheckCircle2, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const detailedServices = [
   {
@@ -14,6 +15,7 @@ const detailedServices = [
     icon: <Laptop className="w-12 h-12 text-primary" />,
     items: ["Custom Structure Planning", "Modern Layout Design", "Full Responsiveness", "Startup Optimized"],
     outcome: "A professional online presence that builds trust and converts.",
+    illustration: "/illustrations/undraw_progressive-web-app_c4uq.svg",
   },
   {
     id: "redesign",
@@ -22,6 +24,7 @@ const detailedServices = [
     icon: <RefreshCw className="w-12 h-12 text-primary" />,
     items: ["Aesthetic Overhaul", "Usability Enhancements", "Performance Upgrades", "Mobile Compatibility"],
     outcome: "A fresh, modern image that increases engagement and conversions.",
+    illustration: "/illustrations/undraw_status-update_7gqz.svg",
   },
   {
     id: "audit",
@@ -30,6 +33,7 @@ const detailedServices = [
     icon: <Search className="w-12 h-12 text-primary" />,
     items: ["Technical Problem Identification", "Speed Bottleneck Fixes", "Stability Improvements", "Cross-Device Testing"],
     outcome: "A faster, more reliable website with better user experience.",
+    illustration: "/illustrations/undraw_data-analysis_b7cp.svg",
   },
   {
     id: "branding",
@@ -38,6 +42,7 @@ const detailedServices = [
     icon: <Fingerprint className="w-12 h-12 text-primary" />,
     items: ["Logo Direction", "Typography Selection", "Color System Design", "Consistency Roadmap"],
     outcome: "A clear, attractive brand identity that strengthens recognition.",
+    illustration: "/illustrations/undraw_visual-explanation_vd4l.svg",
   },
 ];
 
@@ -110,8 +115,13 @@ export default function ServicesPage() {
               </div>
 
               <div className="flex-1 w-full relative">
-                <div className="aspect-square rounded-[2rem] md:rounded-[3rem] border border-white/10 flex items-center justify-center relative overflow-hidden group">
-                  <service.icon.type {...service.icon.props} className="w-24 h-24 md:w-48 md:h-48 text-white/[0.03] group-hover:text-white/[0.05] transition-all duration-700 group-hover:scale-105" />
+                <div className="aspect-video rounded-[2rem] md:rounded-[3rem] border border-white/10 flex items-center justify-center relative overflow-hidden group bg-white/5">
+                  <Image 
+                    src={service.illustration} 
+                    alt={service.title}
+                    fill
+                    className="object-contain p-8 md:p-12 opacity-80 group-hover:opacity-100 transition-opacity duration-700 group-hover:scale-105 transition-transform"
+                  />
                 </div>
               </div>
             </motion.div>

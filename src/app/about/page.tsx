@@ -143,12 +143,12 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10">
+            <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 bg-white/5 p-8">
               <Image 
-                src="/hero-sec-logo.jpeg" 
+                src="/illustrations/undraw_startup-life_7hl8.svg" 
                 alt="PrimeStack Solutions Team Collaboration" 
                 fill
-                className="object-cover"
+                className="object-contain p-6 md:p-10"
               />
             </div>
           </div>

@@ -9,6 +9,7 @@ import { Mail, Phone, MapPin, Instagram, Twitter, Linkedin } from "lucide-react"
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/logo";
+import Image from "next/image";
 
 export default function ContactPage() {
   return (
@@ -80,6 +81,14 @@ export default function ContactPage() {
 
             {/* Contact Action */}
             <div className="flex-1 glass rounded-[3rem] p-8 md:p-12 border-white/10 shadow-2xl flex flex-col justify-center items-center text-center space-y-6">
+              <div className="relative w-full aspect-video mb-4">
+                <Image 
+                  src="/illustrations/undraw_message-sent_iyz6.svg" 
+                  alt="Contact Us" 
+                  fill
+                  className="object-contain"
+                />
+              </div>
               <h2 className="font-clash text-3xl md:text-5xl font-bold">Ready to start?</h2>
               <p className="font-general text-muted-foreground text-lg pb-4">
                 Send us an email directly and we'll get back to you within 24-48 hours.

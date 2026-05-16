@@ -157,7 +157,10 @@ export function PortfolioGrid({ limit }: PortfolioGridProps) {
                     </p>
                   </div>
                   <h3 className="font-satoshi text-3xl font-bold text-white mb-2">
-                    {project.title}
+                    <span className="md:block hidden">{project.title}</span>
+                    <span className="md:hidden block">
+                      {project.title.length > 18 ? `${project.title.slice(0, 18)}...` : project.title}
+                    </span>
                   </h3>
                 </div>
 
