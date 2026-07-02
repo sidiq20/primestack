@@ -14,8 +14,8 @@ const team = [
   {
     name: "Faleke Emmanuel Ayomide",
     initials: "FEA",
-    role: "CEO & Website Security Lead",
-    bio: "I keep every website we deliver safe and secure, protecting client data while supporting high-performing, reliable digital solutions.",
+    role: "CEO",
+    bio: "As the CEO, I bring ideas, people, and technology together to create secure, reliable digital solutions that help our clients succeed.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1974",
   },
   {
@@ -136,7 +136,7 @@ export default function AboutPage() {
                   Our team was born in late 2025 and officially launched in January 2026 with a simple mission: to showcase talent and deliver peak results through collaboration and innovation.
                 </p>
                 <p>
-                  The idea started with Faleke Emmanuel Ayomide and was refined by Famade Eniola. Daniel Gbolahun and Samuel Emmanuel joined soon after, bringing the technical and creative expertise needed to form a team built for excellence.
+                  The idea started with Faleke Emmanuel Ayomide and was refined by Famade Eniola. Daniel Gbolahun and Samuel Emmanuel joined soon after, bringing the technical and creative expertise needed to form a team built for excellence. Sidiq Olasode later came on board, adding depth to our technical capabilities and reinforcing our commitment to building robust, high-quality digital solutions.
                 </p>
                 <p className="text-white font-medium italic">
                   "Prime" represents our drive to operate at our best, while "Stack" represents how we combine ideas, design, and technology.

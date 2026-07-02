@@ -91,7 +91,7 @@ export default function ContactPage() {
               </div>
               <h2 className="font-clash text-3xl md:text-5xl font-bold">Ready to start?</h2>
               <p className="font-general text-muted-foreground text-lg pb-4">
-                Send us an email directly and we'll get back to you within 24-48 hours.
+                Send us an email directly and we'll get back to you within 12-24 hours.
               </p>
               <Link href="mailto:primestackwebsolutions@gmail.com" className="w-full">
                 <Button className={cn(buttonVariants({ size: "lg" }), "w-full rounded-2xl h-14 font-satoshi font-bold text-lg transition-all hover:scale-[1.02]")}>
