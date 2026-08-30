@@ -12,11 +12,11 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
     if (step < 4) {
       timer = setTimeout(() => {
         setStep((s) => s + 1);
-      }, step === 3 ? 1500 : 800);
+      }, step === 3 ? 400 : 300);
     } else if (step === 4) {
       timer = setTimeout(() => {
         onComplete();
-      }, 2000);
+      }, 600);
     }
     return () => clearTimeout(timer);
   }, [step, onComplete]);
