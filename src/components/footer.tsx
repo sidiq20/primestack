@@ -1,7 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram, Twitter, Linkedin } from "lucide-react";
+import { Instagram, Twitter, Linkedin, Star } from "lucide-react";
 import { Logo } from "@/components/logo";
+
+const preferredSourcesUrl = "https://www.google.com/preferences/sources?add=primestackwebsolutions.com";
 
 export function Footer() {
   return (
@@ -55,7 +57,18 @@ export function Footer() {
       </div>
 
       <div className="max-w-6xl mx-auto pt-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-gray-500 font-general">
-        <p>© 2026 PrimeStack Web Solutions. All rights reserved.</p>
+        <div className="flex flex-col sm:flex-row items-center gap-4">
+          <p>© 2026 PrimeStack Web Solutions. All rights reserved.</p>
+          <Link
+            href={preferredSourcesUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 hover:border-primary/50 hover:text-primary transition-all duration-300 text-xs font-satoshi font-bold uppercase tracking-widest"
+          >
+            <Star className="w-3 h-3 fill-current" />
+            Add us on Google Search
+          </Link>
+        </div>
         <div className="flex gap-8">
           <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
           <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
